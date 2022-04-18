@@ -53,18 +53,18 @@ class FutureUS(basequotation.BaseQuotation):
             stocks_detail = stocks_detail.replace('";\n', '')
             stock = stocks_detail.split(",")
             stock_dict = dict(
-                now=stock[0],
+                close=float(stock[0]),
                 # settle=float(stock[1]),
-                buy=float(stock[2]),
-                sell=float(stock[3]),
+                bp=float(stock[2]),
+                ap=float(stock[3]),
                 high=float(stock[4]),
                 low=float(stock[5]),
                 time=(stock[6]),
-                settle=float(stock[7]),
+                last_close=float(stock[7]),
                 open=float(stock[8]),
                 volume=float(stock[9]),
-                buy_vol=float(stock[10]),
-                sell_vol=float(stock[11]),
+                bv=float(stock[10]),
+                av=float(stock[11]),
                 date=stock[12],
                 name=stock[13],
             )
