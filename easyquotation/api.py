@@ -1,10 +1,12 @@
 # coding:utf8
 
-from . import boc, daykline, hkquote, jsl, sina, tencent, timekline
+from . import boc, daykline, hkquote, jsl, sina, futureus, tencent, timekline
 
 
 # pylint: disable=too-many-return-statements
 def use(source):
+    if source in ["futureus"]:
+        return futureus.FutureUS()
     if source in ["sina"]:
         return sina.Sina()
     if source in ["jsl"]:

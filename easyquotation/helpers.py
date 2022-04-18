@@ -37,5 +37,7 @@ def get_stock_type(stock_code):
                "132", "204", "5", "6", "9", "7")
     if stock_code.startswith(("sh", "sz", "zz")):
         return stock_code[:2]
+    elif stock_code.startswith(("hf_")):
+        return ""
     else:
         return "sh" if stock_code.startswith(sh_head) else "sz"
